@@ -65,7 +65,7 @@ section:nth-of-type(2n) {
 
 .playButton::after {
   position: absolute;
-  content: '';
+  /* content: ''; */
   width: 0;
   height: 0;
   border-top: 25px solid transparent;
@@ -78,6 +78,19 @@ section:nth-of-type(2n) {
 
 section:nth-of-type(2n) .playButton {
   background: white;
+}
+
+.image {
+  position: absolute;
+  left: 20px;
+  top: 20px;
+  width: 30%;
+  transition: opacity 500ms;
+}
+
+.image:nth-of-type(2) {
+  right: 20px;
+  left: auto;
 }
 
 a {

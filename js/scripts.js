@@ -92,9 +92,9 @@ function createLights() {
 
   canvasState.lights = new THREE.Group();
 
-  light1 = new THREE.DirectionalLight( 0x0000ff, 0.75, 0, 0.3 );
-  light2 = new THREE.DirectionalLight( 0xff0000,0.75, 0, 0.3 );
-  light3 = new THREE.DirectionalLight( 0x00ff00,0.75, 0, 0.3 );
+  light1 = new THREE.DirectionalLight( 0x0000ff, 0.95, 0, 0.3 );
+  light2 = new THREE.DirectionalLight( 0xff0000,0.75, 0, 0.8 );
+  light3 = new THREE.DirectionalLight( 0xffaa55,0.85, 0, 0.1 );
   
   light1.position.set( -1.5, 1.5, 3);
   light2.position.set( 1.5, 1.5, 3);
@@ -322,7 +322,9 @@ function animate(now, then) {
       canvasState.vZ = 0;
     }
     canvasState.ball.rotation.x -= Math.min(0.1, canvasState.vY);
-    canvasState.ballContainer.rotation.y += Math.min(0.1, canvasState.vX);
+    if (canvasState.ballContainer) {
+      canvasState.ballContainer.rotation.y += Math.min(0.1, canvasState.vX);
+    }
     canvasState.mainY += canvasState.vY * 100;
     document.querySelector('main').style.transform = `translateY(${canvasState.mainY}px)`
   } else {
